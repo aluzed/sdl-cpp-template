@@ -3,16 +3,12 @@
 Window::Window(const std::string &title, int width, int height) :
     _title(title), _width(width), _height(height)
 {
-    //ctor
-    if(!init())
-    {
-        _closed = true;
-    }
+    _closed = !init();
 }
 
 Window::~Window()
 {
-    //dtor
+    SDL_DestroyRenderer(_renderer);
     SDL_DestroyWindow(_window);
     SDL_Quit();
 }
@@ -33,6 +29,14 @@ bool Window::init()
         return 0;
     }
 
+    _renderer = SDL_CreateRenderer(_window, -1, SDL_RENDERER_ACCELERATED);
+
+    if(_renderer == nullptr)
+    {
+        std::cerr << "Failed to render window\n";
+        return 0;
+    }
+
     return true;
 }
 
@@ -45,6 +49,43 @@ void Window::pollEvents()
         switch(event.type)
         {
             case SDL_QUIT: _closed = true; break;
+            case SDL_KEYDOWN:
+                switch(event.key.keysym.sym)
+                {
+                    case SDLK_UP:
+                        std::cout << "key up pressed\n";
+                        break;
+                }
+                break;
+            /*
+            Mouse case for example
+            case SDL_MOUSEMOTION:
+                std::cout << "moving the mouse (" << event.motion.x << ", " << event.motion.y << ")\n";
+                break;
+            */
+            default: break;
         }
     }
+}
+
+void Window::clear() const
+{
+
+    //Present first to display sprites before rendering background
+    SDL_RenderPresent(_renderer);
+
+    //Set the color to the render - R G B A
+    SDL_SetRenderDrawColor(_renderer, 0, 0, 200, 255);
+
+    SDL_RenderClear(_renderer);
+}
+
+GameContext Window::getGameContext()
+{
+    return _gameContext;
+}
+
+void Window::setGameContext(GameContext gc)
+{
+    _gameContext = gc;
 }

@@ -1,8 +1,12 @@
+#pragma once
+
 #ifndef WINDOW_H
 #define WINDOW_H
 #include <string>
 #include <iostream>
 #include <SDL2/SDL.h>
+
+enum GameContext { GAME, MENU, CUTSCENE };
 
 class Window
 {
@@ -11,10 +15,16 @@ class Window
         virtual ~Window();
 
         void pollEvents();
+        void clear() const;
 
         inline bool isClosed() const { return _closed; }
+        GameContext getGameContext();
+        void setGameContext(GameContext gc);
+        int getScreenWidth() const { return _width; }
+        int getScreenHeight() const { return _height; }
 
     protected:
+        SDL_Renderer* _renderer = nullptr;
 
     private:
         bool init();
@@ -27,8 +37,7 @@ class Window
 
         SDL_Window* _window = nullptr;
 
-        SDL_Renderer* _renderer = nullptr;
-
+        GameContext _gameContext = GameContext::GAME;
 };
 
 #endif // WINDOW_H
