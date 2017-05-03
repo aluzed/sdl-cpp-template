@@ -4,20 +4,20 @@ The main structure come's from : [youtube Archie G. channel](https://www.youtube
 
 ## Before compiling :
 ### Right click on project > Build Options > Compiler flag :
-*Enable checkbox :* -std=C++11
+__Enable checkbox :__ -std=C++11
 
 ### linker settings :
-*link libraries :*
+__link libraries :__
 * libmingw32.a (in code block folder)
 * libSDL2main.a
 * libSDL2.a
 
-*Other linker options:*
+__Other linker options:__
 -lmingw32 -lSDL2main -lSDL2 -lSDL2_image -lSDL2_ttf -lSDL2_mixer
 
 ### Search directories :
-*Compiler :*
+__Compiler :__
 include (local project folder)
 
-*Linker :*
+__Linker :__
 lib (local project folder)

@@ -1,8 +1,9 @@
 # depslib dependency file v1.0
-1493319345 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\main.cpp
+1493785047 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\main.cpp
 	<iostream>
 	"Window.h"
 	"Player.h"
+	"Text.h"
 
 1394937196 d:\jeux\jeux\sdl2\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -640,22 +641,45 @@
 	"begin_code.h"
 	"close_code.h"
 
-1493321233 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\window.h
+1493783273 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\window.h
 	<string>
 	<iostream>
 	<SDL2/SDL.h>
 
-1493320754 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\src\window.cpp
+1493784807 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\src\window.cpp
 	"Window.h"
+	<SDL2/SDL_image.h>
+	<SDL2/SDL_ttf.h>
 
 1493318767 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\src\controls.cpp
 	"Controls.h"
 
 1493317732 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\controls.h
 
-1493321146 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\player.h
+1493783344 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\player.h
+	"Window.h"
+	<iostream>
+
+1493783338 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\src\player.cpp
+	"Player.h"
+	<SDL2/SDL_image.h>
+
+1451800373 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1493784795 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\src\text.cpp
+	"Text.h"
 	"Window.h"
 
-1493321248 source:d:\jeux\jeux\templatesdlcpp\templatesdlcpp\src\player.cpp
-	"Player.h"
+1493784742 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\text.h
+	<SDL2/SDL_ttf.h>
+	<iostream>
+
+1454362933 d:\jeux\jeux\templatesdlcpp\templatesdlcpp\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
 
